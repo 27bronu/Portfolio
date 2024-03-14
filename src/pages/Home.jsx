@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import fetchData from '../services';
+import useJsonData from '../hooks/useJsonData';
 
 export default function Home() {
-  const [data, setData] = useState(null);
+  const homeData = useJsonData();
 
-  useEffect(() => {
-    const fetchDataFromJson = async () => {
-      const jsonData = await fetchData();
-      if (jsonData) {
-        setData(jsonData.home);
-      }
-    };
-    fetchDataFromJson();
-  }, []);
+  if (!homeData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="home-container">
       <div className="home-content">
-        {data && (
-          <>
-            <h1 className="home-title">{data.title}</h1>
-            <p className="home-description">{data.description}</p>
-            <NavLink to="/about" className="home-about-button">
-              {data.aboutButtonText}
-            </NavLink>
-          </>
-        )}
+        <>
+          <h1 className="home-title">{homeData.home.title}</h1>
+          <p className="home-description">{homeData.home.description}</p>
+          <NavLink to="/about" className="home-about-button">
+            {homeData.home.aboutButtonText}
+          </NavLink>
+        </>
       </div>
     </div>
   );

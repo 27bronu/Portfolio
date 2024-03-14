@@ -1,12 +1,12 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from "./components/Navbar";
-import { Outlet } from 'react-router-dom';
-
+import { Outlet, useLocation } from 'react-router-dom';
+import './index.css'; 
 
 function App() {
-
-  const current_theme = localStorage.getItem('current-theme');
-  const [theme, setTheme] = useState(current_theme ? current_theme : 'light');
+  const currentTheme = localStorage.getItem('current-theme');
+  const [theme, setTheme] = useState(currentTheme ? currentTheme : 'light');
+  const location = useLocation();
 
   useEffect(() => {
     localStorage.setItem('current-theme', theme);
@@ -15,9 +15,10 @@ function App() {
   return ( 
     <div className={`theme-container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme}/> 
-      <Outlet/>
+      <div className="page-transition">
+        <Outlet/>
+      </div>
     </div>
-
   );
 }
 

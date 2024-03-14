@@ -1,26 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
-import fetchData from '../services';
+import useJsonData from '../hooks/useJsonData';
 
-export function ErrorPage() {
+export default function ErrorPage() {
   const location = useLocation();
-  const [errorData, setErrorData] = useState(null);
+  const errorData = useJsonData();
 
-  useEffect(() => {
-    const fetchDataFromJson = async () => {
-      const jsonData = await fetchData();
-      if (jsonData) {
-        setErrorData(jsonData.errorPage);
-      }
-    };
-    fetchDataFromJson();
-  }, []);
+  if (!errorData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>
-      {errorData && (
+      {errorData.errorPage && (
         <>
-          <h2>{errorData.title}{location.pathname} </h2>
+          <p>{errorData.errorPage.url}{location.pathname}</p>
+          <p>{errorData.errorPage.message}</p>
         </>
       )}
     </div>

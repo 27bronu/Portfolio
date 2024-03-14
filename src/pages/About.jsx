@@ -1,7 +1,7 @@
 import AboutMe from "../components/AboutMe";
 import Skills from '../components/Skills';
 
-export function About() {
+export default function About() {
     return (
         <div className="about-container">
             <AboutMe/>

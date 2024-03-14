@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import fetchData from '../services';
+import React from 'react';
+import useJsonData from '../hooks/useJsonData';
 
-export function Projects() {
-  const [projectsData, setProjectsData] = useState(null);
+export default function Projects() {
+  const projectsData = useJsonData();
 
-  useEffect(() => {
-    const fetchDataFromJson = async () => {
-      const jsonData = await fetchData();
-      if (jsonData) {
-        setProjectsData(jsonData.projects);
-      }
-    };
-    fetchDataFromJson();
-  }, []);
+  if (!projectsData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="home-container">
-      <h2>{projectsData && projectsData.title}</h2>
+      <h2>{projectsData.projects.title}</h2>
     </div>
   );
 }
