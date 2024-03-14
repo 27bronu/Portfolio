@@ -1,8 +1,5 @@
 import React from 'react';
 import useJsonData from '../hooks/useJsonData';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faLinkedin, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
-
 export default function ContactPage() {
   const jsonData = useJsonData();
 
