@@ -1,0 +1,37 @@
+{
+    "home": {
+      "title": "Hi, I'm Bruno!",
+      "description": "Web Dev Student",
+      "aboutButtonText": "Know more about me"
+    },
+    "errorPage": {
+      "title": "404 - Not Found",
+      "url": "Request URL:",
+      "message": "The page you are looking for does not exist."
+    }, 
+    "contact": {
+      "title": "Contact Me"
+    },    
+    "projects": {
+      "title": "Working on it"
+    },
+    "aboutMe": {
+      "title": "About Me",
+      "description": "My name is Bruno and I am a web developer student.",
+      "description2": "Started my journey as a web developer in 2022 with an internship in Proside.",
+      "description3": "Basic knowledge of HTML, CSS, JavaScript, React.",
+      "download": "Download CV"
+    },
+    "skills": {
+      "button": "View Skills",
+      "title": "My Skills"
+    },
+    "navbar" : {
+      "name": "<Bruno Neto/>",
+      "about": "About Me",
+      "projects": "Projects",
+      "contact": "Contact me" 
+    }
+    
+  }
+  
