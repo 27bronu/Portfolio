@@ -15,7 +15,7 @@ export default function Home() {
         <>
           <h1 className="home-title">{homeData.home.title}</h1>
           <p className="home-description">{homeData.home.description}</p>
-          <NavLink to="/Portfolio/about" className="home-about-button">
+          <NavLink to="/about" className="home-about-button">
             {homeData.home.aboutButtonText}
           </NavLink>
         </>
