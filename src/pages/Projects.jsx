@@ -5,36 +5,30 @@ import extsocial from '../assets/extsocial.png';
 
 export default function Projects() {
   const projectsData = useJsonData();
-  const [modalOpen, setModalOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
+  const toggleModal = () => {
+    setShowModal(!showModal);
   };
 
   if (!projectsData) {
     return <div>Loading...</div>;
   }
 
-  const project = projectsData.projects;
-
   return (
     <div className="home-container">
       <div className="projects-container">
         <div className="project-item">
-          <button onClick={openModal}>{project.title}</button>
+          <button onClick={toggleModal}>{projectsData.projects.title}</button>
         </div>
       </div>
       <Modal
-        showModal={modalOpen}
-        toggleModal={closeModal}
+        showModal={showModal}
+        toggleModal={toggleModal}
         content={(
           <>
             <img className='project-image' src={extsocial}/>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">{project.view_project}</a>
+            <a href={projectsData.projects.link} target="_blank" rel="noopener noreferrer">{projectsData.projects.view_project}</a>
           </>
         )}
       />
