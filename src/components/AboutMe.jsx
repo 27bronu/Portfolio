@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import useJsonData from '../hooks/useJsonData';
 import photo from '../assets/me.jpeg';
+import cv from '../assets/CV_Bruno_Neto.pdf';
 
-function AboutMe() {
+export default function AboutMe() {
   const aboutMeData = useJsonData();
   const [showModal, setShowModal] = useState(false);
 
@@ -41,7 +42,7 @@ function AboutMe() {
                 {aboutMeData.aboutMe.description3}
               </p>
               <div className="button-wrapper">
-                <a className='about-button' href="your_cv.pdf" download>{aboutMeData.aboutMe.download}</a>
+                <a className='about-button' href= {cv} download>{aboutMeData.aboutMe.download}</a>
               </div>
             </>
           </div>
@@ -51,4 +52,3 @@ function AboutMe() {
   );
 }
 
-export default AboutMe;

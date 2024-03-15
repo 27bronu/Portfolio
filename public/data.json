@@ -16,7 +16,7 @@
       "github": "https://github.com/27bronu"
     },    
     "projects": {
-      "title": "Still don't have projects :("
+      "title": "Working on it! \uD83E\uDD13"
     },
     "aboutMe": {
       "title": "About",
@@ -34,6 +34,9 @@
       "about": "About Me",
       "projects": "Projects",
       "contact": "Contact me" 
+    },
+    "footer": {
+      "copyright": "\u00A9 Bruno Neto. All rights reserved."
     }
     
   }

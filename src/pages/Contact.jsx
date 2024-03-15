@@ -9,16 +9,16 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
-      <h1>{jsonData.contact.title}</h1>
+      <h1 className='contact-title'>{jsonData.contact.title}</h1>
       <div className="social-icons">
         <a href={jsonData.contact.linkedin} target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-linkedin fa-2x"></i>
+        <i className="fa-brands fa-linkedin fa-2x"></i>
         </a>
         <a href={jsonData.contact.instagram} target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-instagram fa-2x"></i>
+        <i className="fa-brands fa-instagram fa-2x"></i>
         </a>
         <a href={jsonData.contact.github} target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-github fa-2x"></i>
+        <i className="fa-brands fa-github fa-2x"></i>
         </a>
       </div>
     </div>

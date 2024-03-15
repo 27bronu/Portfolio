@@ -16,15 +16,15 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "about", 
+                path: "Portfolio/about", 
                 element: <About />
             },
             {
-                path: "projects", 
+                path: "Portfolio/projects", 
                 element: <Projects />
             },
             {
-                path: "contact", 
+                path: "Portfolio/contact", 
                 element: <Contact />
             },
             {
@@ -37,5 +37,5 @@ export const router = createBrowserRouter([
     {
         path: "/Portfolio",
         element: <Navigate to="/" replace />
-    }
+    },
 ]);

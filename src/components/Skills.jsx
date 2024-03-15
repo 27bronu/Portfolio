@@ -7,7 +7,7 @@ import reactImage from '../assets/react.png';
 import nodeImage from '../assets/node-js.png';
 import useJsonData from '../hooks/useJsonData';
 
-function Skills() {
+export default function Skills() {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -47,4 +47,3 @@ function Skills() {
   );
 }
 
-export default Skills;
