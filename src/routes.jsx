@@ -8,7 +8,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/Portfolio/",
         element: <App />,
         children: [
             {
@@ -16,15 +16,15 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "Portfolio/about", 
+                path: "about", 
                 element: <About />
             },
             {
-                path: "Portfolio/projects", 
+                path: "projects", 
                 element: <Projects />
             },
             {
-                path: "Portfolio/contact", 
+                path: "contact", 
                 element: <Contact />
             },
             {
@@ -33,9 +33,5 @@ export const router = createBrowserRouter([
             }
         ]
     },
-  
-    {
-        path: "/Portfolio",
-        element: <Navigate to="/" replace />
-    },
+
 ]);

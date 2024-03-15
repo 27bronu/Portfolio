@@ -26,20 +26,20 @@ export default function Navbar({ theme, setTheme }) {
       <div className="navbar">
         <h1 className='navbar-logo'>
           {navbarData && (
-            <NavLink to="/">{navbarData.name}</NavLink>
+            <NavLink to="/Portfolio/">{navbarData.name}</NavLink>
           )}
         </h1>
         <ul>
           {navbarData && (
             <>
               <li>
-                <NavLink to="/Portfolio/about">{navbarData.about}</NavLink>
+                <NavLink to="about">{navbarData.about}</NavLink>
               </li>
               <li>
-                <NavLink to="Portfolio/projects">{navbarData.projects}</NavLink>
+                <NavLink to="projects">{navbarData.projects}</NavLink>
               </li>
               <li>
-                <NavLink to="Portfolio/contact">{navbarData.contact}</NavLink>
+                <NavLink to="contact">{navbarData.contact}</NavLink>
               </li>
             </>
           )}
