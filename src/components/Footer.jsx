@@ -10,7 +10,9 @@ export default function Footer() {
   
   return (
     <footer className='footer'>
-      <p>{footerData.footer.copyright}</p>
+      <div className="footer-content">
+        <p>{footerData.footer.copyright}</p>
+      </div>
     </footer>
   );
 }

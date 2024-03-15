@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import toogle_light from '../assets/night.png';
 import toogle_dark from '../assets/day.png';
-import fetchData from '../services';
+import useJsonData from '../hooks/useJsonData';
 
 export default function Navbar({ theme, setTheme }) {
-  const [navbarData, setNavbarData] = useState(null);
-
-  useEffect(() => {
-    const fetchDataFromJson = async () => {
-      const jsonData = await fetchData();
-      if (jsonData) {
-        setNavbarData(jsonData.navbar);
-      }
-    };
-    fetchDataFromJson();
-  }, []);
+  const data = useJsonData();
 
   const toggle_mode = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -25,21 +15,21 @@ export default function Navbar({ theme, setTheme }) {
     <div>
       <div className="navbar">
         <h1 className='navbar-logo'>
-          {navbarData && (
-            <NavLink to="/">{navbarData.name}</NavLink>
+          {data && (
+            <NavLink to="/">{data.navbar.name}</NavLink>
           )}
         </h1>
         <ul>
-          {navbarData && (
+          {data && (
             <>
               <li>
-                <NavLink to="/about">{navbarData.about}</NavLink>
+                <NavLink to="/about">{data.navbar.about}</NavLink>
               </li>
               <li>
-                <NavLink to="/projects">{navbarData.projects}</NavLink>
+                <NavLink to="/projects">{data.navbar.projects}</NavLink>
               </li>
               <li>
-                <NavLink to="/contact">{navbarData.contact}</NavLink>
+                <NavLink to="/contact">{data.navbar.contact}</NavLink>
               </li>
             </>
           )}
